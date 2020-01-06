@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.study.networkprogram.proto";
+option java_outer_classname = "PersonProto";
+
+message Person {
+	string name = 1;
+	int32 age = 2;
+	bool sex = 3;
+	int64 birth = 4;
+}

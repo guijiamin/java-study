@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.study.networkprogram.proto";
+option java_outer_classname = "MsgProto";
+
+message Msg {
+    string msgId = 1;
+    string msgType = 2;
+    map<string, string> extend = 3;
+    User fromUser = 4;
+    User toUser = 5;
+}
+
+message User {
+    string rid = 1;
+    string uid = 2;
+    string name = 3;
+    string img = 4;
+}
