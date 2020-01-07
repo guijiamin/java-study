@@ -11,10 +11,18 @@
     <modules>
         <module>data-structure</module>
         <module>design-pattern</module>
+        <module>distribution-practice</module>
         <module>network-program</module>
         <module>tiny-springmvc</module>
         <module>tiny-tomcat</module>
     </modules>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>
