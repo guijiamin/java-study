@@ -15,6 +15,7 @@
         <module>network-program</module>
         <module>tiny-springmvc</module>
         <module>tiny-tomcat</module>
+        <module>tiny-mybatis</module>
     </modules>
 
     <dependencies>
