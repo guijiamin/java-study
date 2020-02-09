@@ -19,21 +19,23 @@ interface IAirCondition {
     void printB();
 }
 
-class GreeFridge implements IFridge {
+class GreenFridge implements IFridge {
+    @Override
     public void printA() {
         System.out.println("Gree fridge A");
     }
-
+    @Override
     public void printB() {
         System.out.println("Gree fridge B");
     }
 }
 
 class SamsungFridge implements IFridge {
+    @Override
     public void printA() {
         System.out.println("Samsung fridge A");
     }
-
+    @Override
     public void printB() {
         System.out.println("Samsung fridge B");
     }
@@ -44,21 +46,23 @@ public abstract class AbstractFactory {
     abstract IAirCondition produceAirCondition();
 }
 
-class GreeFactory extends AbstractFactory {
+class GreenFactory extends AbstractFactory {
+    @Override
     IFridge produceFridge() {
-        return new GreeFridge();
+        return new GreenFridge();
     }
-
+    @Override
     IAirCondition produceAirCondition() {
         return null;
     }
 }
 
 class SamsungFactory extends AbstractFactory {
+    @Override
     IFridge produceFridge() {
         return new SamsungFridge();
     }
-
+    @Override
     IAirCondition produceAirCondition() {
         return null;
     }

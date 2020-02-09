@@ -14,6 +14,7 @@ interface IOrderApi {
 }
 
 class OrderApiImpl implements IOrderApi {
+    @Override
     public void updateDate(String orderId, String date, String client) {
         System.out.println("client已将订单：" + orderId + "退款期延长至：" + date);
     }
@@ -25,6 +26,7 @@ class ProxyOrderApiImpl implements IOrderApi {
         this.orderApi = new OrderApiImpl();
     }
 
+    @Override
     public void updateDate(String orderId, String date, String client) {
         if (client.equals("admin")) {
             this.orderApi.updateDate(orderId, date, client);

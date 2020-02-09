@@ -14,12 +14,14 @@ interface Animal {
 }
 
 class Dog implements Animal {
+    @Override
     public void print() {
         System.out.println("Dog");
     }
 }
 
 class Pig implements Animal {
+    @Override
     public void print() {
         System.out.println("Pig");
     }
@@ -30,12 +32,14 @@ interface IFactory {
 }
 
 class DogFactory implements IFactory {
+    @Override
     public Animal produce() {
         return new Dog();
     }
 }
 
 class PigFactory implements IFactory {
+    @Override
     public Animal produce() {
         return new Pig();
     }

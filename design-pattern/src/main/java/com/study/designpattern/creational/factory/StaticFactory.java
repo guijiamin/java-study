@@ -14,12 +14,14 @@ interface Teacher {
 }
 
 class TeacherA implements Teacher {
+    @Override
     public void print() {
         System.out.println("TeacherA");
     }
 }
 
 class TeacherB implements Teacher {
+    @Override
     public void print() {
         System.out.println("TeacherB");
     }

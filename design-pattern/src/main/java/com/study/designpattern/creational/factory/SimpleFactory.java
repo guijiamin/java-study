@@ -14,12 +14,14 @@ interface Fruit {
 }
 
 class Apple implements Fruit {
+    @Override
     public void print() {
         System.out.println("Apple");
     }
 }
 
 class Orange implements Fruit {
+    @Override
     public void print() {
         System.out.println("Orange");
     }
