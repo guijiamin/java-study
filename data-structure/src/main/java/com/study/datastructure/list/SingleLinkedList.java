@@ -33,10 +33,12 @@ public class SingleLinkedList<T> implements List<T> {
         }
     }
 
+    @Override
     public boolean isEmpty() {
         return this.head == null;
     }
 
+    @Override
     public int length() {
         int count = 0;
         SLNode<T> slNode = this.head;
@@ -47,10 +49,12 @@ public class SingleLinkedList<T> implements List<T> {
         return count;
     }
 
+    @Override
     public void clear() {
         this.head = null;
     }
 
+    @Override
     public boolean contains(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -66,6 +70,7 @@ public class SingleLinkedList<T> implements List<T> {
         return false;
     }
 
+    @Override
     public T get(int index) {
         if (index < 0) {
             throw new IllegalArgumentException("index cannot be negtive");
@@ -84,6 +89,7 @@ public class SingleLinkedList<T> implements List<T> {
         return null;
     }
 
+    @Override
     public T set(int index, T data) {
         if (index < 0 || data == null) {
             throw new IllegalArgumentException("index cannot be negtive or data cannot be null");
@@ -101,6 +107,7 @@ public class SingleLinkedList<T> implements List<T> {
         return null;
     }
 
+    @Override
     public boolean add(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -123,6 +130,7 @@ public class SingleLinkedList<T> implements List<T> {
      * @param data
      * @return
      */
+    @Override
     public boolean insert(int index, T data) {
         if (index < 0 || data == null) {
             throw new IllegalArgumentException("index cannot be negtive or data cannot be null");
@@ -157,6 +165,7 @@ public class SingleLinkedList<T> implements List<T> {
         }
     }
 
+    @Override
     public boolean remove(int index) {
         if (index < 0) {
             throw new IllegalArgumentException("index cannot be negtive");
@@ -187,6 +196,7 @@ public class SingleLinkedList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public boolean remove(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -217,6 +227,7 @@ public class SingleLinkedList<T> implements List<T> {
         return false;
     }
 
+    @Override
     public boolean removeAll(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -249,6 +260,7 @@ public class SingleLinkedList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");

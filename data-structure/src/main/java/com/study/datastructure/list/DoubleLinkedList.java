@@ -13,6 +13,7 @@ import com.study.datastructure.pojo.DLNode;
 public class DoubleLinkedList<T> implements List<T> {
     private DLNode<T> head;
 
+    @Override
     public boolean isEmpty() {
         return this.head == null;
     }
@@ -36,6 +37,7 @@ public class DoubleLinkedList<T> implements List<T> {
         }
     }
 
+    @Override
     public int length() {
         int count = 0;
         DLNode<T> dlNode = this.head;
@@ -46,10 +48,12 @@ public class DoubleLinkedList<T> implements List<T> {
         return count;
     }
 
+    @Override
     public void clear() {
         this.head = null;
     }
 
+    @Override
     public boolean contains(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -64,6 +68,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return false;
     }
 
+    @Override
     public T get(int index) {
         if (index < 0) {
             throw new IllegalArgumentException("index cannot be negtive");
@@ -80,6 +85,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return null;
     }
 
+    @Override
     public T set(int index, T data) {
         if (index < 0 || data == null) {
             throw new IllegalArgumentException("index cannot be negtive or data cannot be null");
@@ -97,6 +103,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return null;
     }
 
+    @Override
     public boolean add(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -123,6 +130,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public boolean insert(int index, T data) {
         if (index < 0 || data == null) {
             throw new IllegalArgumentException("index cannot be negtive or data cannot be null");
@@ -159,7 +167,9 @@ public class DoubleLinkedList<T> implements List<T> {
             previous = current;
             current = current.getNext();
         }
-        if (index > i) index = i;//如果插入大于当前链表长度，默认放到尾部
+        if (index > i) {
+            index = i;//如果插入大于当前链表长度，默认放到尾部
+        }
         if (i == index) {//插入尾部
             DLNode<T> dlNode = new DLNode<T>(data);
             dlNode.setPrev(previous);
@@ -169,6 +179,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return false;
     }
 
+    @Override
     public boolean remove(int index) {
         if (index < 0) {
             throw new IllegalArgumentException("index cannot be negtive");
@@ -207,6 +218,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return false;
     }
 
+    @Override
     public boolean remove(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -243,6 +255,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return false;
     }
 
+    @Override
     public boolean removeAll(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -275,6 +288,7 @@ public class DoubleLinkedList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");

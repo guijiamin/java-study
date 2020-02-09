@@ -3,6 +3,7 @@ package com.study.datastructure.list;
 /**
  * Decription
  * <p>
+ *     线性表：数组实现
  * </p>
  * DATE 18/12/10.
  *
@@ -42,28 +43,35 @@ public class SequenceList<T> implements List<T> {
         }
 
         for (int i = 0; i < this.length; i++) {
-            if (this.data[i].equals(data)) return i;
+            if (this.data[i].equals(data)) {
+                return i;
+            }
         }
         return -1;
     }
 
+    @Override
     public boolean isEmpty() {
         return this.length == 0;
     }
 
+    @Override
     public int length() {
         return this.length;
     }
 
+    @Override
     public void clear() {
         this.data = null;
         this.length = 0;
     }
 
+    @Override
     public boolean contains(T data) {
         return this.indexOf(data) > -1;
     }
 
+    @Override
     public T get(int index) {
         if (index < 0 || index > this.length) {
             throw new IllegalArgumentException("index is out of bounds");
@@ -71,6 +79,7 @@ public class SequenceList<T> implements List<T> {
         return (T) this.data[index];
     }
 
+    @Override
     public T set(int index, T data) {
         if (index < 0 || index > this.length) {
             throw new IllegalArgumentException("index is out of bounds");
@@ -83,6 +92,7 @@ public class SequenceList<T> implements List<T> {
         return (T) this.data[index];
     }
 
+    @Override
     public boolean add(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -91,6 +101,7 @@ public class SequenceList<T> implements List<T> {
         return this.insert(this.length, data);
     }
 
+    @Override
     public boolean insert(int index, T data) {
         if (index < 0 || index > this.length) {
             throw new IllegalArgumentException("index is out of bounds");
@@ -118,6 +129,7 @@ public class SequenceList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public boolean remove(int index) {
         if (index < 0 || index > this.length) {
             throw new IllegalArgumentException("index is out of bounds");
@@ -130,6 +142,7 @@ public class SequenceList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public boolean remove(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -138,6 +151,7 @@ public class SequenceList<T> implements List<T> {
         return this.remove(this.indexOf(data));
     }
 
+    @Override
     public boolean removeAll(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -151,6 +165,7 @@ public class SequenceList<T> implements List<T> {
         return true;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");

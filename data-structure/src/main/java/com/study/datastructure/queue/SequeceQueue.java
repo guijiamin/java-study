@@ -30,10 +30,12 @@ public class SequeceQueue<T> implements Queue<T> {
         this.front = this.rear = 0;
     }
 
+    @Override
     public boolean isEmpty() {
         return this.front == this.rear;
     }
 
+    @Override
     public int size() {
         return this.size;
     }
@@ -44,6 +46,7 @@ public class SequeceQueue<T> implements Queue<T> {
      * @param data
      * @return
      */
+    @Override
     public boolean add(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -74,6 +77,7 @@ public class SequeceQueue<T> implements Queue<T> {
      * @param data
      * @return
      */
+    @Override
     public boolean offer(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -95,6 +99,7 @@ public class SequeceQueue<T> implements Queue<T> {
      *
      * @return
      */
+    @Override
     public T peek() {
         if (this.isEmpty()) {
             return null;
@@ -108,6 +113,7 @@ public class SequeceQueue<T> implements Queue<T> {
      *
      * @return
      */
+    @Override
     public T element() {
         if (this.isEmpty()) {
             throw new NoSuchElementException("data is null");
@@ -121,6 +127,7 @@ public class SequeceQueue<T> implements Queue<T> {
      *
      * @return
      */
+    @Override
     public T poll() {
         if (this.isEmpty()) {
             return null;
@@ -137,6 +144,7 @@ public class SequeceQueue<T> implements Queue<T> {
      *
      * @return
      */
+    @Override
     public T remove() {
         if (this.isEmpty()) {
             throw new NoSuchElementException("data is null");
@@ -144,8 +152,11 @@ public class SequeceQueue<T> implements Queue<T> {
         return poll();
     }
 
+    @Override
     public void clear() {
-        if (this.isEmpty()) return;
+        if (this.isEmpty()) {
+            return;
+        }
         for (int i = this.front; i != this.rear; i = (i + 1) % this.elementData.length) {
             this.elementData[i] = null;
         }
@@ -153,6 +164,7 @@ public class SequeceQueue<T> implements Queue<T> {
         this.size = 0;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");

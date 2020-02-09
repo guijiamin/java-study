@@ -16,7 +16,8 @@ public class BinarySearch {
 
         while (lo <= hi) {
 //            int mid = lo + (hi - lo) / 2;//(lo+hi)/2当lo、hi很大时可能会溢出
-            int mid = lo + ((hi - lo) >> 1);//计算机处理位运算要快很多
+            //计算机处理位运算要快很多
+            int mid = lo + ((hi - lo) >> 1);
             if (value > array[mid]) {
                 lo = mid + 1;
             } else if (value < array[mid]) {
@@ -33,7 +34,9 @@ public class BinarySearch {
     }
 
     private static int searchRecursionInternal(int[] array, int lo, int hi, int value) {
-        if (lo > hi) return -1;
+        if (lo > hi) {
+            return -1;
+        }
 
         int mid = lo + ((hi - lo) >> 1);
         if (value > array[mid]) {

@@ -20,14 +20,17 @@ public class LinkedStack<T> implements Stack<T> {
         this.top = new SLNode<T>();
     }
 
+    @Override
     public boolean isEmpty() {
         return this.top == null || this.top.getData() == null;
     }
 
+    @Override
     public int length() {
         return this.length;
     }
 
+    @Override
     public void push(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -46,6 +49,7 @@ public class LinkedStack<T> implements Stack<T> {
         this.length++;
     }
 
+    @Override
     public T pop() {
         if (this.isEmpty()) {
             return null;
@@ -56,6 +60,7 @@ public class LinkedStack<T> implements Stack<T> {
         return currentTop.getData();
     }
 
+    @Override
     public T peek() {
         if (this.isEmpty()) {
             return null;
@@ -63,6 +68,7 @@ public class LinkedStack<T> implements Stack<T> {
         return this.top.getData();
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");

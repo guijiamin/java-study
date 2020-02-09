@@ -28,10 +28,12 @@ public class LinkedQueue<T> implements Queue<T> {
         this.front = this.rear = null;
     }
 
+    @Override
     public boolean isEmpty() {
         return this.front == null && this.rear == null;
     }
 
+    @Override
     public int size() {
         return this.size;
     }
@@ -41,6 +43,7 @@ public class LinkedQueue<T> implements Queue<T> {
      * @param data
      * @return
      */
+    @Override
     public boolean add(T data) {
         if (data == null) {
             throw  new IllegalArgumentException("data cannot be null");
@@ -62,6 +65,7 @@ public class LinkedQueue<T> implements Queue<T> {
      * @param data
      * @return
      */
+    @Override
     public boolean offer(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -78,6 +82,7 @@ public class LinkedQueue<T> implements Queue<T> {
      * 出队不删除，队列为空返回null
      * @return
      */
+    @Override
     public T peek() {
         if (this.isEmpty()) {
             return null;
@@ -89,6 +94,7 @@ public class LinkedQueue<T> implements Queue<T> {
      * 出队不删除，队列为空抛异常
      * @return
      */
+    @Override
     public T element() {
         if (this.isEmpty()) {
             throw new NoSuchElementException("queue is empty");
@@ -100,6 +106,7 @@ public class LinkedQueue<T> implements Queue<T> {
      * 出队并删除，队列为空返回null
      * @return
      */
+    @Override
     public T poll() {
         if (this.isEmpty()) {
             return null;
@@ -114,6 +121,7 @@ public class LinkedQueue<T> implements Queue<T> {
      * 出队并删除，队列为空抛异常
      * @return
      */
+    @Override
     public T remove() {
         if (this.isEmpty()) {
             throw new NoSuchElementException("queue is empty");
@@ -124,12 +132,16 @@ public class LinkedQueue<T> implements Queue<T> {
     /**
      * 清空队列
      */
+    @Override
     public void clear() {
-        if (this.isEmpty()) return;
+        if (this.isEmpty()) {
+            return;
+        }
         this.front = this.rear = null;
         this.size = 0;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");

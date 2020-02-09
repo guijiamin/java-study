@@ -25,14 +25,17 @@ public class SequenceStack<T> implements Stack<T> {
         this.data = (T[]) new Object[capacity];
     }
 
+    @Override
     public boolean isEmpty() {
         return this.length == 0;
     }
 
+    @Override
     public int length() {
         return this.length;
     }
 
+    @Override
     public void push(T data) {
         if (data == null) {
             throw new IllegalArgumentException("data cannot be null");
@@ -51,6 +54,7 @@ public class SequenceStack<T> implements Stack<T> {
         this.data[++this.top] = data;
     }
 
+    @Override
     public T pop() {
         if (this.isEmpty()) {
             return null;
@@ -59,6 +63,7 @@ public class SequenceStack<T> implements Stack<T> {
         return this.data[this.top--];
     }
 
+    @Override
     public T peek() {
         if (this.isEmpty()) {
             return null;
@@ -66,6 +71,7 @@ public class SequenceStack<T> implements Stack<T> {
         return this.data[this.top];
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(");
