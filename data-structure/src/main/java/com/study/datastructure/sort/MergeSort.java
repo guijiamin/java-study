@@ -17,7 +17,9 @@ public class MergeSort {
         if (array == null) {
             throw new IllegalArgumentException("array cannot be null");
         }
-        if (array.length <= 1) return array;
+        if (array.length <= 1) {
+            return array;
+        }
         int mid = array.length / 2;
         int[] left = Arrays.copyOfRange(array, 0, mid);
         int[] right = Arrays.copyOfRange(array, mid, array.length);

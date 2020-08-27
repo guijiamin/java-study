@@ -24,8 +24,9 @@ public class SelectionSort {
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;
             for (int j = minIndex; j < array.length; j++) {
-                if (array[j] < array[minIndex])
+                if (array[j] < array[minIndex]) {
                     minIndex = j;
+                }
             }
             int tmp = array[minIndex];
             array[minIndex] = array[i];
